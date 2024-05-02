@@ -41,7 +41,7 @@ class Home : AppCompatActivity() {
 
         listentries.setOnClickListener()
         {
-            val le = Intent(this, ListofEntries::class.java)
+            val le = Intent(this, ListOfEntries::class.java)
             startActivity(le)
         }
 
