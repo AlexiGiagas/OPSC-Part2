@@ -58,22 +58,42 @@
 
     <EditText
         android:id="@+id/txtUserReg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="222dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="366dp"
+        android:background="@drawable/rounded_corner"
         android:ems="10"
+        android:hint="Username"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="311dp" />
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtPassReg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="222dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="382dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="304dp"
+        android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="385dp" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
