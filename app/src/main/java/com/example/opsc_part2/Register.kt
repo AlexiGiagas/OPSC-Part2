@@ -1,6 +1,8 @@
 package com.example.opsc_part2
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,7 +19,19 @@ class Register : AppCompatActivity() {
             insets
         }
 
+        var btnReg : Button = findViewById(R.id.btnRegister)
 
+        btnReg.setOnClickListener() {
+            var uname: EditText = findViewById(R.id.txtUserReg)
+            var pass: EditText = findViewById(R.id.txtPassReg)
+
+            if ((uname.text.toString().equals("")) || (pass.text.toString().equals(""))) {
+                //error
+            }
+            else {
+                MainActivity.arrUsers.add(Users(uname.text.toString(), pass.text.toString()))
+            }
+        }
 
     }
 }
