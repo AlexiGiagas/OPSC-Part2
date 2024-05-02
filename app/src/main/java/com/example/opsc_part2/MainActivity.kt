@@ -65,7 +65,10 @@ class MainActivity : AppCompatActivity() {
             }
             if(found == false)
             {
-                
+                //Toast.makeText(this, "Enter correct login credentials", Toast.LENGTH_SHORT).show()
+                username.setError("Please enter valid username!")
+                password.setError("Please enter valid password!")
+
             }
 
         }
