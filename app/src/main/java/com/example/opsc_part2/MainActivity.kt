@@ -2,6 +2,8 @@ package com.example.opsc_part2
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,6 +25,17 @@ class MainActivity : AppCompatActivity() {
 
         btnlogin.setOnClickListener()
         {
+            var txtUserLog : EditText = findViewById(R.id.txtUsername)
+            var txtPassLog : EditText = findViewById(R.id.txtPassword)
+
+            if((txtUserLog.text.toString().isEmpty()) || (txtPassLog.text.toString().isEmpty()))
+            {
+                Toast.makeText(this, "Please enter valid Username and Password",Toast.LENGTH_LONG).show()
+            }
+            else
+            {
+
+            }
 
         }
 
