@@ -1,6 +1,7 @@
 package com.example.opsc_part2
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +17,24 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        var btnlogin : Button = findViewById(R.id.btnLogin)
+        var btnregister : Button = findViewById(R.id.btnRegister)
+        var btngoogle : Button = findViewById(R.id.btnGoogleLogin)
+
+        btnlogin.setOnClickListener()
+        {
+
+        }
+
+        btnregister.setOnClickListener()
+        {
+
+        }
+
+        btngoogle.setOnClickListener()
+        {
+
+        }
+
     }
 }
