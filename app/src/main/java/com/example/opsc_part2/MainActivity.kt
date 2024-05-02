@@ -1,5 +1,6 @@
 package com.example.opsc_part2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         var btnlogin : Button = findViewById(R.id.btnLogin)
         btnlogin.setOnClickListener()
         {
-            var found = 0
+            var found = false
             SignedIn = -1
 
             for(i in 0 until arrUsers.size)
@@ -51,7 +52,20 @@ class MainActivity : AppCompatActivity() {
                 if( (username.text.toString().equals(arrUsers[i].Username)) && (password.text.toString().equals(arrUsers[i].Password)) )
                 {
                     Toast.makeText(this, "Successfully logged in!", Toast.LENGTH_SHORT).show()
+
+                    found = true
+
+
+                    SignedIn = i
+                    break
+
+
+
                 }
+            }
+            if(found == false)
+            {
+                
             }
 
         }
