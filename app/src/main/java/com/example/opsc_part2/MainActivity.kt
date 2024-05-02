@@ -11,6 +11,11 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
+    companion object
+    {
+        var arrUsers = ArrayList<Users>()
+        var SignedIn : Int = 0
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,23 +26,32 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        var btnlogin : Button = findViewById(R.id.btnLogin)
+
+
+
         var btnregister : Button = findViewById(R.id.btnRegister)
         var btngoogle : Button = findViewById(R.id.btnGoogleLogin)
 
+        var username : EditText = findViewById(R.id.txtUsername)
+        var password : EditText = findViewById(R.id.txtPassword)
+
+
+        arrUsers.add(Users("John", "12345"))
+        arrUsers.add(Users("Jane","54321"))
+
         //Login button
+        var btnlogin : Button = findViewById(R.id.btnLogin)
         btnlogin.setOnClickListener()
         {
-            var txtUserLog : EditText = findViewById(R.id.txtUsername)
-            var txtPassLog : EditText = findViewById(R.id.txtPassword)
+            var found = 0
+            SignedIn = -1
 
-            if((txtUserLog.text.toString().isEmpty()) || (txtPassLog.text.toString().isEmpty()))
+            for(i in 0 until arrUsers.size)
             {
-                Toast.makeText(this, "Please enter valid Username and Password",Toast.LENGTH_LONG).show()
-            }
-            else
-            {
-
+                if( (username.text.toString().equals(arrUsers[i].Username)) && (password.text.toString().equals(arrUsers[i].Password)) )
+                {
+                    Toast.makeText(this, "Successfully logged in!", Toast.LENGTH_SHORT).show()
+                }
             }
 
         }
