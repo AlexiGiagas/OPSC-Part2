@@ -5,81 +5,117 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Timesheet"
-    android:background="#E7FDE2">
+    android:background="#E7FDE2"
+    tools:context=".Timesheet">
 
     <EditText
         android:id="@+id/txtEndTime"
         android:layout_width="226dp"
         android:layout_height="47dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="404dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="End Time"
         android:inputType="time"
         android:paddingLeft="15dp"
         android:textColorHint="@color/black"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="280dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtDate"
         android:layout_width="226dp"
         android:layout_height="47dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="546dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="Enter Date"
         android:inputType="date"
         android:paddingLeft="15dp"
         android:textColorHint="@color/black"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="138dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="226dp"
         android:layout_height="47dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="352dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="332dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="Description"
         android:inputType="text"
         android:paddingLeft="15dp"
         android:textColorHint="@color/black"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="352dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtStartTime"
         android:layout_width="226dp"
         android:layout_height="47dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="207dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="477dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="Start Time"
         android:inputType="time"
         android:paddingLeft="15dp"
         android:textColorHint="@color/black"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="207dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="244dp"
         android:layout_height="39dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="626dp"
         android:text="Timesheets"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="66dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAddTimesheet"
         android:layout_width="213dp"
         android:layout_height="51dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="176dp"
         android:backgroundTint="#96D19C"
         android:text="Add Timesheet"
         android:textColor="@color/black"
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="504dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
