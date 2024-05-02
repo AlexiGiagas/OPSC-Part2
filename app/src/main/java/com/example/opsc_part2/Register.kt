@@ -1,8 +1,11 @@
 package com.example.opsc_part2
 
+import android.content.Intent
 import android.os.Bundle
+import android.sax.StartElementListener
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,10 +29,14 @@ class Register : AppCompatActivity() {
             var pass: EditText = findViewById(R.id.txtPassReg)
 
             if ((uname.text.toString().equals("")) || (pass.text.toString().equals(""))) {
-                //error
+                uname.setError("Please enter valid username!")
+                pass.setError("Please enter valid password!")
             }
             else {
                 MainActivity.arrUsers.add(Users(uname.text.toString(), pass.text.toString()))
+                Toast.makeText(this, "Successfully registered! Please login.", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
         }
 
