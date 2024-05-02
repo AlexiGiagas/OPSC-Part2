@@ -49,23 +49,20 @@ class MainActivity : AppCompatActivity() {
 
             for(i in 0 until arrUsers.size)
             {
-                if( (username.text.toString().equals(arrUsers[i].Username)) && (password.text.toString().equals(arrUsers[i].Password)) )
+                if((username.text.toString().equals(arrUsers[i].Username)) && (password.text.toString().equals(arrUsers[i].Password)))
                 {
                     Toast.makeText(this, "Successfully logged in!", Toast.LENGTH_SHORT).show()
 
                     found = true
 
-
+                    val int = Intent(this, HomePage::class.java)
+                    startActivity(int)
                     SignedIn = i
                     break
-
-
-
                 }
             }
             if(found == false)
             {
-                //Toast.makeText(this, "Enter correct login credentials", Toast.LENGTH_SHORT).show()
                 username.setError("Please enter valid username!")
                 password.setError("Please enter valid password!")
 
@@ -75,7 +72,8 @@ class MainActivity : AppCompatActivity() {
 
         btnregister.setOnClickListener()
         {
-
+            val n = Intent(this, Register::class.java)
+            startActivity(n)
         }
 
         btngoogle.setOnClickListener()

@@ -35,7 +35,7 @@
         android:layout_marginBottom="211dp"
         android:backgroundTint="#C6C6C6"
         android:text="Login with Google"
-        android:textAlignment="textEnd"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
