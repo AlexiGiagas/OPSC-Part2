@@ -1,5 +1,6 @@
 package com.example.opsc_part2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -64,7 +65,6 @@ class MainActivity : AppCompatActivity() {
             {
                 username.setError("Please enter valid username!")
                 password.setError("Please enter valid password!")
-
             }
 
         }
