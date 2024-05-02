@@ -44,7 +44,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtPassword"
+        android:id="@+id/txtPass"
         android:layout_width="222dp"
         android:layout_height="45dp"
         android:layout_marginStart="95dp"

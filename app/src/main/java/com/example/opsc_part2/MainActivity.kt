@@ -1,6 +1,5 @@
 package com.example.opsc_part2
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         var btngoogle : Button = findViewById(R.id.btnGoogleLogin)
 
         var username : EditText = findViewById(R.id.txtUsername)
-        var password : EditText = findViewById(R.id.txtPassword)
+        var password : EditText = findViewById(R.id.txtPass)
 
 
         arrUsers.add(Users("John", "12345"))
