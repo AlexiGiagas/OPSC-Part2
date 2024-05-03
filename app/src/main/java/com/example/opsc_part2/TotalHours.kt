@@ -39,6 +39,6 @@ class TotalHours : AppCompatActivity()
 
         val listbox : ListView = findViewById(R.id.lstTotalHours)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arrTSdata)
-
+        listbox.adapter = adapter
     }
 }
