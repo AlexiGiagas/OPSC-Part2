@@ -4,7 +4,7 @@ import java.sql.Time
 import java.util.Date
 
 data class TimesheetData (
-    val Date : Date,
+    //val Date : Date,
     val StartTime : Time,
     val EndTime : Time,
     val Description : String,

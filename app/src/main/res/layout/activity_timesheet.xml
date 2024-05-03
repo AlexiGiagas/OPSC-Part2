@@ -83,7 +83,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TimePicker
-        android:id="@+id/timePicker"
+        android:id="@+id/tpStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -105,7 +105,7 @@
         android:id="@+id/txtDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/timePicker"
+        android:layout_alignBottom="@+id/tpStart"
         android:layout_marginTop="215dp"
         android:paddingLeft="80dp"
         android:textColor="@color/black"
@@ -114,7 +114,7 @@
         tools:layout_editor_absoluteX="-3dp" />
 
     <TimePicker
-        android:id="@+id/timePicker1"
+        android:id="@+id/tpEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -135,7 +135,7 @@
         android:id="@+id/txtDisplay1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/timePicker"
+        android:layout_alignBottom="@+id/tpEnd"
         android:layout_marginTop="416dp"
         android:paddingLeft="80dp"
         android:textColor="@color/black"
