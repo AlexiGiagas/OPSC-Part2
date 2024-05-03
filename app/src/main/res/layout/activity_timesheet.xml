@@ -94,6 +94,7 @@
         android:numbersInnerTextColor="@color/black"
         android:numbersSelectorColor="@color/black"
         android:numbersTextColor="@color/black"
+        android:numbersBackgroundColor="@color/black"
         android:timePickerMode="spinner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
