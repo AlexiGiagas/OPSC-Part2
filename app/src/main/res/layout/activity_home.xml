@@ -42,53 +42,15 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btnListEntries"
-        android:layout_width="273dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginTop="499dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="180dp"
-        android:backgroundTint="#CACCCA"
-        android:text="List of Entries"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/btnTotalHours"
         android:layout_width="273dp"
         android:layout_height="52dp"
         android:layout_marginStart="69dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="119dp"
+        android:layout_marginTop="499dp"
         android:backgroundTint="#CACCCA"
         android:text="Total Hours"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnTimesheet"
-        android:layout_width="273dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginTop="379dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="300dp"
-        android:backgroundTint="#CACCCA"
-        android:text="Timesheet"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,15 +59,11 @@
         android:layout_width="273dp"
         android:layout_height="52dp"
         android:layout_marginStart="69dp"
-        android:layout_marginTop="439dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginTop="378dp"
         android:backgroundTint="#CACCCA"
         android:text="Categories"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,22 +72,39 @@
         android:layout_width="273dp"
         android:layout_height="52dp"
         android:layout_marginStart="69dp"
-        android:layout_marginTop="623dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginTop="562dp"
         android:backgroundTint="#CACCCA"
         android:text="Min and Max Hours"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnListEntries"
+        android:layout_width="273dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="438dp"
+        android:backgroundTint="#CACCCA"
+        android:text="List of Entries"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
+    <Button
+        android:id="@+id/btnTimesheet"
+        android:layout_width="273dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="318dp"
+        android:backgroundTint="#CACCCA"
+        android:text="Timesheet"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
