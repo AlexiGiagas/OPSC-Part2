@@ -16,7 +16,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Categories : AppCompatActivity()
 {
+    //Declaring the category arraylist
     var arrCategories = ArrayList<String>()
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -27,22 +29,28 @@ class Categories : AppCompatActivity()
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        //declaring variables
+
+        //Declaring variables
         var btnaddcategory : Button = findViewById(R.id.btnAddCategory)
         var listbox : ListView = findViewById(R.id.listBox)
         var back : Button = findViewById(R.id.btnBack)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arrCategories)
 
+        //Creating an adapter
         listbox.adapter = adapter
 
+        //Setting an on click event for the add category button
         btnaddcategory.setOnClickListener()
         {
             var categ : EditText = findViewById(R.id.txtCategory)
 
+            //Error handling
             if (categ.text.toString().equals(""))
             {
                 categ.setError("Please enter valid Category!")
             }
+
+            //Adding the category to the array
             else
             {
                 arrCategories.add(categ.text.toString())
@@ -51,11 +59,10 @@ class Categories : AppCompatActivity()
             }
         }
 
+        //Setting an on click event for the back button to go to the main menu
         back.setOnClickListener() {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
-
     }
-
 }

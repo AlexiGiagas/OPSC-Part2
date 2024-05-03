@@ -10,8 +10,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.w3c.dom.Text
 
-class Home : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+class Home : AppCompatActivity()
+{
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
@@ -21,40 +23,46 @@ class Home : AppCompatActivity() {
             insets
         }
 
+        //Declaring variables
         var timesheet : Button = findViewById(R.id.btnTimesheet)
         var categories : Button = findViewById(R.id.btnCategories)
         var listentries : Button = findViewById(R.id.btnListEntries)
         var tothours : Button = findViewById(R.id.btnTotalHours)
         var minmax : Button = findViewById(R.id.btnMinMax)
-        
-            timesheet.setOnClickListener()
+
+        //Setting an on click event to go to the timesheets page
+        timesheet.setOnClickListener()
             {
                 val t = Intent(this, Timesheet::class.java)
                 startActivity(t)
             }
 
-            categories.setOnClickListener()
+        //Setting an on click event to go to the categories page
+        categories.setOnClickListener()
             {
                 val c = Intent(this, Categories::class.java)
                 startActivity(c)
             }
 
-            listentries.setOnClickListener()
+        //Setting an on click event to go to the list entries page
+        listentries.setOnClickListener()
             {
                 val le = Intent(this, ListOfEntries::class.java)
                 startActivity(le)
             }
 
-            tothours.setOnClickListener()
+        //Setting an on click event to go to the total hours page
+        tothours.setOnClickListener()
             {
                 val th = Intent(this, TotalHours::class.java)
                 startActivity(th)
             }
-            minmax.setOnClickListener()
+
+        //Setting an on click event to go to the min and max hours page
+        minmax.setOnClickListener()
             {
                 val mm = Intent(this, MinMaxHours::class.java)
                 startActivity(mm)
             }
-
     }
 }
