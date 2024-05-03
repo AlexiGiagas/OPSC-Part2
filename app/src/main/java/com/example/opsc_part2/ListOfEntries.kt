@@ -39,7 +39,7 @@ class ListOfEntries : AppCompatActivity() {
         arrEntries.clear()
         adapter.notifyDataSetChanged()
 
-        //Declaring bac button variable
+        //Declaring back button variable
         var back: Button = findViewById(R.id.btnBack)
 
         //Setting an on click event to go to the home page
