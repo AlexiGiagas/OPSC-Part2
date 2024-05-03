@@ -14,7 +14,11 @@ class MinMaxHours : AppCompatActivity()
 {
     companion object
     {
+<<<<<<< Updated upstream
         var arrMinMax : ArrayList<String> = ArrayList()
+=======
+        //var arrMinMax : Array<Int>()
+>>>>>>> Stashed changes
     }
     override fun onCreate(savedInstanceState: Bundle?)
     {
