@@ -75,7 +75,6 @@ class Timesheet : AppCompatActivity()
                     // display format of time
                     val msg = "$hour : $min $am_pm"
                     startdisplay.text = msg
-                    startdisplay.visibility = ViewGroup.VISIBLE
                 }
             }
             //endregion
@@ -107,28 +106,26 @@ class Timesheet : AppCompatActivity()
                     // display format of time
                     val message = "$hour : $min $am_pm"
                     enddisplay.text = message
-                    enddisplay.visibility = ViewGroup.VISIBLE
                 }
             }
 
             //endregion
 
-
-            var formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy")
-            var date: EditText = findViewById(R.id.txtDate)
-            var desc: EditText = findViewById(R.id.txtDescription)
-
             var btnadd: Button = findViewById(R.id.btnAddTimesheet)
             btnadd.setOnClickListener()
             {
 
+                val dateString: EditText = findViewById(R.id.txtDate)
+                val desc: EditText = findViewById(R.id.txtDescription)
 
                 if ((startdisplay.text.toString().isEmpty()) || (enddisplay.text.toString()
-                        .isEmpty()) || (desc.text.toString().isEmpty())
+                        .isEmpty()) || (desc.text.toString().isEmpty()) || (dateString.text.toString().isEmpty())
                 ) {
                     Toast.makeText(this, "Enter all fields!", Toast.LENGTH_SHORT).show()
                 } else {
-                    //arrTimesheet.add(TimesheetData(startdisplay.text.toString(), enddisplay.text.toString(), desc.text.toString()))
+                    val formatter = SimpleDateFormat("dd-MM-yyyy")
+                    val date = formatter.parse(dateString.text.toString())
+                    arrTimesheet.add(TimesheetData(date, startdisplay.text.toString(), enddisplay.text.toString(), desc.text.toString()))
                     Toast.makeText(this, "Successfully added timesheet", Toast.LENGTH_SHORT).show()
                 }
 
