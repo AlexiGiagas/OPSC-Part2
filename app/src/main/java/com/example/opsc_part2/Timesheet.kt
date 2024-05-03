@@ -12,6 +12,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 
 class Timesheet : AppCompatActivity() {
@@ -99,7 +101,8 @@ class Timesheet : AppCompatActivity() {
             }
             //endregion
 
-        var tdate : EditText = findViewById(R.id.txtDate)
+
+        var date : EditText = findViewById(R.id.txtDate)
         var desc : EditText = findViewById(R.id.txtDescription)
 
 
