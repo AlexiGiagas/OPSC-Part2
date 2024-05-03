@@ -8,9 +8,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.get
+import androidx.recyclerview.widget.RecyclerView
 
 class Categories : AppCompatActivity()
 {
+    var arrCategories = ArrayList<CategoriesData>()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -24,7 +27,6 @@ class Categories : AppCompatActivity()
 
         var btnaddcategory : Button = findViewById(R.id.btnAddCategory)
 
-
         btnaddcategory.setOnClickListener()
         {
             var categ : EditText = findViewById(R.id.txtCategory)
@@ -35,12 +37,9 @@ class Categories : AppCompatActivity()
             }
             else
             {
-                MainActivity.arrCategories.add(Categories())
+                arrCategories.add(CategoriesData(categ.text.toString()))
                 Toast.makeText(this, "Successfully added Category.", Toast.LENGTH_SHORT).show()
             }
-
-
-
         }
 
     }

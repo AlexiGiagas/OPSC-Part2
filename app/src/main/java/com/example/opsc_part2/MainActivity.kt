@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     {
         var arrUsers = ArrayList<Users>()
         var SignedIn : Int = 0
-        var arrCategories = ArrayList<Categories>()
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
