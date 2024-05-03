@@ -61,34 +61,64 @@ class Timesheet : AppCompatActivity() {
                 val hour = if (hour < 10) "0" + hour else hour
                 val min = if (minute < 10) "0"  + minute else minute
                 // display format of time
-                val msg = "Time is: $hour : $min $am_pm"
+                val msg = "$hour : $min $am_pm"
                 startdisplay.text = msg
                 startdisplay.visibility = ViewGroup.VISIBLE
             }
         }
         //endregion
 
+        //region EndTime
+            val enddisplay = findViewById<TextView>(R.id.txtEndDisp)
+            val tpend = findViewById<TimePicker>(R.id.tpEnd)
+            tpend.setOnTimeChangedListener { _, hour, minute ->
+                var hour = hour
+                var am_pm = ""
+                // AM_PM decider logic
+                when {
+                    hour == 0 -> {
+                        hour += 12
+                        am_pm = "AM" }
 
-        var btnadd : Button = findViewById(R.id.btnAddTimesheet)
+                    hour == 12 -> am_pm = "PM"
+                    hour > 12 -> {
+                        hour -= 12
+                        am_pm = "PM" }
+
+                    else -> am_pm = "AM"
+                }
+                if (enddisplay != null)
+                {
+                    val hour = if (hour < 10) "0" + hour else hour
+                    val min = if (minute < 10) "0"  + minute else minute
+                    // display format of time
+                    val message = "$hour : $min $am_pm"
+                    enddisplay.text = message
+                    enddisplay.visibility = ViewGroup.VISIBLE
+                }
+            }
+            //endregion
 
         var tdate : EditText = findViewById(R.id.txtDate)
         var desc : EditText = findViewById(R.id.txtDescription)
 
+
+        var btnadd : Button = findViewById(R.id.btnAddTimesheet)
         btnadd.setOnClickListener()
         {
 
-            if((startdisplay.text.toString().isEmpty()) || (desc.text.toString().isEmpty()))
+            if((startdisplay.text.toString().isEmpty()) || (enddisplay.text.toString().isEmpty()) || (desc.text.toString().isEmpty()))
             {
-                Toast.makeText(this, "Please enter all fields!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Enter all fields!", Toast.LENGTH_SHORT).show()
             }
             else
             {
-                arrTimesheet.add(TimesheetData(startdisplay.text.toString(), desc.text.toString()))
-                Toast.makeText(this, "Added to array", Toast.LENGTH_SHORT).show()
-                arrTimesheet.isEmpty()
+                arrTimesheet.add(TimesheetData(startdisplay.text.toString(), enddisplay.text.toString(), desc.text.toString()))
+                Toast.makeText(this, "Successfully added timesheet", Toast.LENGTH_SHORT).show()
             }
 
+
+        }
         }
     }
-}
 }
