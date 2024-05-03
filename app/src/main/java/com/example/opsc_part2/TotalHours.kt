@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import org.w3c.dom.Text
 import java.sql.Time
 import java.text.SimpleDateFormat
+import java.util.concurrent.TimeUnit
 import java.util.regex.Pattern
 
 class TotalHours : AppCompatActivity()
@@ -53,8 +54,8 @@ class TotalHours : AppCompatActivity()
             adapter.notifyDataSetChanged()
 
             //Declaring variables
-            val startdate: TextView = findViewById(R.id.txtStartDate)
-            val enddate: TextView = findViewById(R.id.txtEndDate)
+            val startdate: TextView = findViewById(R.id.txtSearchStartDate)
+            val enddate: TextView = findViewById(R.id.txtSearchEndDate)
             val category : TextView = findViewById(R.id.txtCategorySearch)
             val pattern = Pattern.compile("\\d{2}-\\d{2}-\\d{4}")
             val matcher1 = pattern.matcher(startdate.text.toString())
@@ -66,6 +67,7 @@ class TotalHours : AppCompatActivity()
                 if (x.equals(category.text.toString()))
                 {
                     found = true
+                    break
                 }
             }
 
@@ -78,10 +80,17 @@ class TotalHours : AppCompatActivity()
                     val date = formatter.parse(formatter.format(arg.Date))
 
                     if (date in sdate..edate) {
-                        val formateddate = formatter.format(arg.Date)
+                        val format = SimpleDateFormat("hh:mm a")
 
+                        // Parse the times into Date objects
+                        val startTime = format.parse(arg.StartTime)
+                        val endTime = format.parse(arg.EndTime)
+                        // Calculate the difference in milliseconds
+                        val differenceInMillis = endTime.time - startTime.time
+                        // Convert milliseconds to hours
+                        var differenceInHours = TimeUnit.MILLISECONDS.toHours(differenceInMillis)
 
-
+                        //arrHours.add("Category: " + category.text.toString() + ", Hours Spent: " + differenceInHours)
                         adapter.notifyDataSetChanged()
                     }
                 }
