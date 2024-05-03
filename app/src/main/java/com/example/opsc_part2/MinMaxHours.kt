@@ -41,6 +41,7 @@ class MinMaxHours : AppCompatActivity()
             {
                 arrMinMax.add(min.text.toString())
                 arrMinMax.add(max.text.toString())
+                println(arrMinMax.isEmpty())
             }
         }
     }

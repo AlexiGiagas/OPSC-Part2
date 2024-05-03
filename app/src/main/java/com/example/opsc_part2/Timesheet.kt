@@ -110,9 +110,6 @@ class Timesheet : AppCompatActivity() {
         var date : EditText = findViewById(R.id.txtDate)
         var desc : EditText = findViewById(R.id.txtDescription)
 
-
-
-
         var btnadd : Button = findViewById(R.id.btnAddTimesheet)
         btnadd.setOnClickListener()
         {
