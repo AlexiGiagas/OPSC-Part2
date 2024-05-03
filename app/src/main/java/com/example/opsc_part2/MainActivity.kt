@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         // Declaring variables
         var btnregister : Button = findViewById(R.id.btnRegister)
         var btngoogle : Button = findViewById(R.id.btnGoogleLogin)
-        var btnminmax : Button = findViewById(R.id.btnMinMax)
+
 
         var username : EditText = findViewById(R.id.txtUsername)
         var password : EditText = findViewById(R.id.txtPass)

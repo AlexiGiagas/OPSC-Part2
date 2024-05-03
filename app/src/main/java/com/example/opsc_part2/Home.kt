@@ -26,6 +26,7 @@ class Home : AppCompatActivity() {
         var categories : Button = findViewById(R.id.btnCategories)
         var listentries : Button = findViewById(R.id.btnListEntries)
         var tothours : Button = findViewById(R.id.btnTotalHours)
+        var minmax : Button = findViewById(R.id.btnMinMax)
 
         timesheet.setOnClickListener()
         {
@@ -49,6 +50,11 @@ class Home : AppCompatActivity() {
         {
             val th = Intent(this, TotalHours::class.java)
             startActivity(th)
+        }
+        minmax.setOnClickListener()
+        {
+            val mm = Intent(this, MinMaxHours::class.java)
+            startActivity(mm)
         }
 
     }
