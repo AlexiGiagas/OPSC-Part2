@@ -21,7 +21,6 @@ class Timesheet : AppCompatActivity() {
         var arrTimesheet = ArrayList<TimesheetData>()
     }
 
-    //delete commwnt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,9 +31,16 @@ class Timesheet : AppCompatActivity() {
             insets
         }
 
-        val display = findViewById<TextView>(R.id.txtDisplay)
+
+        val display = findViewById<TextView>(R.id.txtEndDisp)
         val tp = findViewById<TimePicker>(R.id.tpStart)
         tp.setOnTimeChangedListener { _, hour, minute ->
+
+        //region StartTime
+        val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
+        val tpstart = findViewById<TimePicker>(R.id.tpStart)
+        tpstart.setOnTimeChangedListener { _, hour, minute ->
+
             var hour = hour
             var am_pm = ""
             // AM_PM decider logic
@@ -50,18 +56,20 @@ class Timesheet : AppCompatActivity() {
 
                 else -> am_pm = "AM"
             }
-            if (display != null)
+            if (startdisplay != null)
             {
                 val hour = if (hour < 10) "0" + hour else hour
                 val min = if (minute < 10) "0"  + minute else minute
                 // display format of time
                 val msg = "Time is: $hour : $min $am_pm"
-                display.text = msg
-                display.visibility = ViewGroup.VISIBLE
+                startdisplay.text = msg
+                startdisplay.visibility = ViewGroup.VISIBLE
             }
         }
+        //endregion
 
-            var btnadd : Button = findViewById(R.id.btnAddTimesheet)
+
+        var btnadd : Button = findViewById(R.id.btnAddTimesheet)
 
         var tdate : EditText = findViewById(R.id.txtDate)
         var desc : EditText = findViewById(R.id.txtDescription)
@@ -69,7 +77,16 @@ class Timesheet : AppCompatActivity() {
         btnadd.setOnClickListener()
         {
 
-
+            if((startdisplay.text.toString().isEmpty()) || (desc.text.toString().isEmpty()))
+            {
+                Toast.makeText(this, "Please enter all fields!", Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                arrTimesheet.add(TimesheetData(startdisplay.text.toString(), desc.text.toString()))
+                Toast.makeText(this, "Added to array", Toast.LENGTH_SHORT).show()
+                arrTimesheet.isEmpty()
+            }
 
         }
     }

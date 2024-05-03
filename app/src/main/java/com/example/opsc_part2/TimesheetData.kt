@@ -5,8 +5,8 @@ import java.util.Date
 
 data class TimesheetData (
     //val Date : Date,
-    val StartTime : Time,
-    val EndTime : Time,
+    val StartTime : String,
+    //val EndTime : String,
     val Description : String,
     //val imageURL : String
 )
