@@ -1,6 +1,7 @@
 package com.example.opsc_part2
 
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.ViewGroup
@@ -20,7 +21,8 @@ import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Date
 
-class Timesheet : AppCompatActivity() {
+class Timesheet : AppCompatActivity()
+{
 
     companion object
     {
@@ -28,7 +30,8 @@ class Timesheet : AppCompatActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_timesheet)
@@ -44,38 +47,39 @@ class Timesheet : AppCompatActivity() {
         val tp = findViewById<TimePicker>(R.id.tpStart)
         //region StartTime
         tp.setOnTimeChangedListener { _, hour, minute ->
-        val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
-        val tpstart = findViewById<TimePicker>(R.id.tpStart)
-        tpstart.setOnTimeChangedListener { _, hour, minute ->
+            val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
+            val tpstart = findViewById<TimePicker>(R.id.tpStart)
+            tpstart.setOnTimeChangedListener { _, hour, minute ->
 
-            var hour = hour
-            var am_pm = ""
-            // AM_PM decider logic
-            when {
-                hour == 0 -> {
-                    hour += 12
-                    am_pm = "AM" }
+                var hour = hour
+                var am_pm = ""
+                // AM_PM decider logic
+                when {
+                    hour == 0 -> {
+                        hour += 12
+                        am_pm = "AM"
+                    }
 
-                hour == 12 -> am_pm = "PM"
-                hour > 12 -> {
-                    hour -= 12
-                    am_pm = "PM" }
+                    hour == 12 -> am_pm = "PM"
+                    hour > 12 -> {
+                        hour -= 12
+                        am_pm = "PM"
+                    }
 
-                else -> am_pm = "AM"
+                    else -> am_pm = "AM"
+                }
+                if (startdisplay != null) {
+                    val hour = if (hour < 10) "0" + hour else hour
+                    val min = if (minute < 10) "0" + minute else minute
+                    // display format of time
+                    val msg = "$hour : $min $am_pm"
+                    startdisplay.text = msg
+                    startdisplay.visibility = ViewGroup.VISIBLE
+                }
             }
-            if (startdisplay != null)
-            {
-                val hour = if (hour < 10) "0" + hour else hour
-                val min = if (minute < 10) "0"  + minute else minute
-                // display format of time
-                val msg = "$hour : $min $am_pm"
-                startdisplay.text = msg
-                startdisplay.visibility = ViewGroup.VISIBLE
-            }
-        }
-        //endregion
+            //endregion
 
-        //region EndTime
+            //region EndTime
             val enddisplay = findViewById<TextView>(R.id.txtEndDisp)
             val tpend = findViewById<TimePicker>(R.id.tpEnd)
             tpend.setOnTimeChangedListener { _, hour, minute ->
@@ -85,19 +89,20 @@ class Timesheet : AppCompatActivity() {
                 when {
                     hour == 0 -> {
                         hour += 12
-                        am_pm = "AM" }
+                        am_pm = "AM"
+                    }
 
                     hour == 12 -> am_pm = "PM"
                     hour > 12 -> {
                         hour -= 12
-                        am_pm = "PM" }
+                        am_pm = "PM"
+                    }
 
                     else -> am_pm = "AM"
                 }
-                if (enddisplay != null)
-                {
+                if (enddisplay != null) {
                     val hour = if (hour < 10) "0" + hour else hour
-                    val min = if (minute < 10) "0"  + minute else minute
+                    val min = if (minute < 10) "0" + minute else minute
                     // display format of time
                     val message = "$hour : $min $am_pm"
                     enddisplay.text = message
@@ -106,27 +111,32 @@ class Timesheet : AppCompatActivity() {
             }
             //endregion
 
-        var formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy")
-        var date : EditText = findViewById(R.id.txtDate)
-        var desc : EditText = findViewById(R.id.txtDescription)
+            var formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy")
+            var date: EditText = findViewById(R.id.txtDate)
+            var desc: EditText = findViewById(R.id.txtDescription)
 
-        var btnadd : Button = findViewById(R.id.btnAddTimesheet)
-        btnadd.setOnClickListener()
-        {
-
-
-            if((startdisplay.text.toString().isEmpty()) || (enddisplay.text.toString().isEmpty()) || (desc.text.toString().isEmpty()))
+            var btnadd: Button = findViewById(R.id.btnAddTimesheet)
+            btnadd.setOnClickListener()
             {
-                Toast.makeText(this, "Enter all fields!", Toast.LENGTH_SHORT).show()
-            }
-            else
-            {
-                //arrTimesheet.add(TimesheetData(startdisplay.text.toString(), enddisplay.text.toString(), desc.text.toString()))
-                Toast.makeText(this, "Successfully added timesheet", Toast.LENGTH_SHORT).show()
-            }
 
 
+                if ((startdisplay.text.toString().isEmpty()) || (enddisplay.text.toString()
+                        .isEmpty()) || (desc.text.toString().isEmpty())
+                ) {
+                    Toast.makeText(this, "Enter all fields!", Toast.LENGTH_SHORT).show()
+                } else {
+                    //arrTimesheet.add(TimesheetData(startdisplay.text.toString(), enddisplay.text.toString(), desc.text.toString()))
+                    Toast.makeText(this, "Successfully added timesheet", Toast.LENGTH_SHORT).show()
+                }
+
+
+            }
         }
+        var back : Button = findViewById(R.id.btnBack)
+
+        back.setOnClickListener() {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
         }
     }
 }
