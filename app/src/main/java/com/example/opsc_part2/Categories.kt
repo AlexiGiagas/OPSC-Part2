@@ -27,7 +27,7 @@ class Categories : AppCompatActivity()
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        //declaring variables
         var btnaddcategory : Button = findViewById(R.id.btnAddCategory)
         var listbox : ListView = findViewById(R.id.listBox)
         var back : Button = findViewById(R.id.btnBack)
