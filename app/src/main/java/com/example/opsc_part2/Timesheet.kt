@@ -121,6 +121,16 @@ class Timesheet : AppCompatActivity()
 
                 val dateString: EditText = findViewById(R.id.txtDate)
                 val desc: EditText = findViewById(R.id.txtDescription)
+                val category : EditText = findViewById(R.id.txtCat)
+                val found : Boolean = false
+
+                for (arg in Categories.arrCategories)
+                {
+                    if (arg.equals(category.text.toString()))
+                    {
+                        found == true
+                    }
+                }
 
                 val pattern = Pattern.compile("\\d{2}-\\d{2}-\\d{4}")
                 val matcher = pattern.matcher(dateString.text.toString())
@@ -129,6 +139,9 @@ class Timesheet : AppCompatActivity()
                         .isEmpty()) || (desc.text.toString().isEmpty()) || (dateString.text.toString().isEmpty())
                 ) {
                     Toast.makeText(this, "Enter all fields!", Toast.LENGTH_SHORT).show()
+                }
+                else if (!found) {
+                    category.error = "Category not found, please enter an already added category."
                 }
                 else if (!matcher.matches()) {
                     dateString.error = "Please make sure the date is in the format: dd-mm-yyyy"
