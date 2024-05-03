@@ -26,6 +26,7 @@ import java.util.regex.Pattern
 class Timesheet : AppCompatActivity()
 {
 
+    //Companion object that stores the timesheet arraylist
     companion object {
         var arrTimesheet = ArrayList<TimesheetData>()
     }
@@ -40,14 +41,15 @@ class Timesheet : AppCompatActivity()
             insets
         }
 
+        //Declaring variables for the start and end dates
         val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
         val enddisplay = findViewById<TextView>(R.id.txtEndDisp)
 
         startdisplay.visibility = View.GONE
         enddisplay.visibility = View.GONE
 
+
         val tp = findViewById<TimePicker>(R.id.tpStart)
-        //region StartTime
         tp.setOnTimeChangedListener { _, hour, minute ->
             val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
             val tpstart = findViewById<TimePicker>(R.id.tpStart)
@@ -78,9 +80,10 @@ class Timesheet : AppCompatActivity()
                     startdisplay.text = msg
                 }
             }
-            //endregion
 
-            //region EndTime
+
+
+
             val enddisplay = findViewById<TextView>(R.id.txtEndDisp)
             val tpend = findViewById<TimePicker>(R.id.tpEnd)
             tpend.setOnTimeChangedListener { _, hour, minute ->
@@ -110,7 +113,7 @@ class Timesheet : AppCompatActivity()
                 }
             }
 
-            //endregion
+
 
             var btnadd: Button = findViewById(R.id.btnAddTimesheet)
             btnadd.setOnClickListener()
