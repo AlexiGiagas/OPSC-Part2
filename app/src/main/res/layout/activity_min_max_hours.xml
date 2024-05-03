@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FDE2"
-    tools:context=".ListOfEntries">
+    tools:context=".MinMaxHours">
 
     <TextView
         android:id="@+id/textView"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtStartDate"
+        android:id="@+id/txtMinHours"
         android:layout_width="226dp"
         android:layout_height="47dp"
         android:layout_marginStart="92dp"
@@ -35,7 +35,7 @@
         android:layout_marginBottom="544dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Enter Start Date"
+        android:hint="Enter Min Hours"
         android:inputType="date"
         android:paddingLeft="15dp"
         android:textColorHint="@color/black"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtEndDate"
+        android:id="@+id/txtMaxHours"
         android:layout_width="226dp"
         android:layout_height="47dp"
         android:layout_marginStart="92dp"
@@ -54,7 +54,7 @@
         android:layout_marginBottom="478dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Enter End Date"
+        android:hint="Enter Max Hours"
         android:inputType="date"
         android:paddingLeft="15dp"
         android:textColorHint="@color/black"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnSearchEntries"
+        android:id="@+id/btnAddMinMaxHours"
         android:layout_width="213dp"
         android:layout_height="51dp"
         android:layout_marginStart="99dp"
@@ -72,22 +72,9 @@
         android:layout_marginEnd="99dp"
         android:layout_marginBottom="408dp"
         android:backgroundTint="#96D19C"
-        android:text="Search Entries"
+        android:text="Add Hours"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lstEntries"
-        android:layout_width="409dp"
-        android:layout_height="368dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="362dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
