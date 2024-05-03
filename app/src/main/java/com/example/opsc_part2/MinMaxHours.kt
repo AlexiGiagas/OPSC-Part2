@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,8 @@ class MinMaxHours : AppCompatActivity()
         var btnaddminmax : Button = findViewById(R.id.btnAddMinMaxHours)
         var min : EditText = findViewById(R.id.txtMinHours)
         var max : EditText = findViewById(R.id.txtMaxHours)
+        var minval : TextView = findViewById(R.id.txtMinValue)
+        var maxval : TextView = findViewById(R.id.txtMaxValue)
 
         //Button to add min and max values
         btnaddminmax.setOnClickListener()
@@ -45,8 +48,8 @@ class MinMaxHours : AppCompatActivity()
             }
             else
             {
-                arrMinMax.add(min.text.toString())
-                arrMinMax.add(max.text.toString())
+                minval.setText(min.text.toString())
+                maxval.setText(max.text.toString())
 
                 Toast.makeText(this, "Successfully added Min and Max hours", Toast.LENGTH_SHORT).show()
             }
