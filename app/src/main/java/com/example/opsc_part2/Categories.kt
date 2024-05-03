@@ -17,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView
 class Categories : AppCompatActivity()
 {
     //Declaring the category arraylist
-    var arrCategories = ArrayList<String>()
+    companion object {
+        var arrCategories = ArrayList<String>()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
