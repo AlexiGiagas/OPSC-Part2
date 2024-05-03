@@ -48,7 +48,7 @@ class Timesheet : AppCompatActivity()
         startdisplay.visibility = View.GONE
         enddisplay.visibility = View.GONE
 
-
+        //Code for the start time
         val tp = findViewById<TimePicker>(R.id.tpStart)
         tp.setOnTimeChangedListener { _, hour, minute ->
             val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
@@ -81,9 +81,7 @@ class Timesheet : AppCompatActivity()
                 }
             }
 
-
-
-
+            //Code for the end time
             val enddisplay = findViewById<TextView>(R.id.txtEndDisp)
             val tpend = findViewById<TimePicker>(R.id.tpEnd)
             tpend.setOnTimeChangedListener { _, hour, minute ->
@@ -113,8 +111,7 @@ class Timesheet : AppCompatActivity()
                 }
             }
 
-
-
+            //Code block below for the adding of dates and times to the timesheet
             var btnadd: Button = findViewById(R.id.btnAddTimesheet)
             btnadd.setOnClickListener()
             {
@@ -125,6 +122,7 @@ class Timesheet : AppCompatActivity()
                 val pattern = Pattern.compile("\\d{2}-\\d{2}-\\d{4}")
                 val matcher = pattern.matcher(dateString.text.toString())
 
+                //error handling
                 if ((startdisplay.text.toString().isEmpty()) || (enddisplay.text.toString()
                         .isEmpty()) || (desc.text.toString().isEmpty()) || (dateString.text.toString().isEmpty())
                 ) {
@@ -145,8 +143,8 @@ class Timesheet : AppCompatActivity()
             }
         }
 
+        //back button on timesheet page
         var back : Button = findViewById(R.id.btnBack)
-
         back.setOnClickListener() {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)

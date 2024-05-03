@@ -22,12 +22,13 @@ class Register : AppCompatActivity() {
             insets
         }
 
+        //Registration button on register page
         var btnReg : Button = findViewById(R.id.btnRegister)
-
         btnReg.setOnClickListener() {
             var uname: EditText = findViewById(R.id.txtUserReg)
             var pass: EditText = findViewById(R.id.txtPassReg)
 
+            //error handling
             if ((uname.text.toString().equals("")) || (pass.text.toString().equals(""))) {
                 uname.setError("Please enter valid username!")
                 pass.setError("Please enter valid password!")

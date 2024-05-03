@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MinMaxHours : AppCompatActivity()
 {
+    //Companion object for Min and Max values
     companion object
     {
         var arrMinMax : ArrayList<String> = ArrayList()
@@ -28,13 +29,15 @@ class MinMaxHours : AppCompatActivity()
             insets
         }
 
+        //variables for this page
         var btnaddminmax : Button = findViewById(R.id.btnAddMinMaxHours)
         var min : EditText = findViewById(R.id.txtMinHours)
         var max : EditText = findViewById(R.id.txtMaxHours)
 
-
+        //Button to add min and max values
         btnaddminmax.setOnClickListener()
         {
+            //Error handling
             if((min.text.toString().isEmpty()) || (max.text.toString().isEmpty()))
             {
                 min.setError("Please enter valid minimum hours")
@@ -42,17 +45,15 @@ class MinMaxHours : AppCompatActivity()
             }
             else
             {
-                println(arrMinMax.isEmpty())
                 arrMinMax.add(min.text.toString())
                 arrMinMax.add(max.text.toString())
-                println(arrMinMax.isEmpty())
 
                 Toast.makeText(this, "Successfully added Min and Max hours", Toast.LENGTH_SHORT).show()
             }
         }
 
+        //Back button on this page
         var back : Button = findViewById(R.id.btnBack)
-
         back.setOnClickListener() {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)

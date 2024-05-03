@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
             for(i in 0 until arrUsers.size)
             {
+                //error handling
                 if((username.text.toString().equals(arrUsers[i].Username)) && (password.text.toString().equals(arrUsers[i].Password)))
                 {
                     Toast.makeText(this, "Successfully logged in!", Toast.LENGTH_SHORT).show()
@@ -71,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //register button
         btnregister.setOnClickListener()
         {
             val n = Intent(this, Register::class.java)
