@@ -122,7 +122,7 @@ class Timesheet : AppCompatActivity() {
             }
             else
             {
-                arrTimesheet.add(TimesheetData(startdisplay.text.toString(), enddisplay.text.toString(), desc.text.toString()))
+                //arrTimesheet.add(TimesheetData(startdisplay.text.toString(), enddisplay.text.toString(), desc.text.toString()))
                 Toast.makeText(this, "Successfully added timesheet", Toast.LENGTH_SHORT).show()
             }
 
