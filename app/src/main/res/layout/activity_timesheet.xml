@@ -92,19 +92,24 @@
         android:layout_marginEnd="78dp"
         android:layout_marginBottom="334dp"
         android:timePickerMode="spinner"
+        android:numbersTextColor="@color/black"
+        android:numbersInnerTextColor="@color/black"
+        android:numbersSelectorColor="@color/black"
+        android:numbersBackgroundColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/txtDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/timePicker"
         android:layout_marginTop="215dp"
         android:paddingLeft="80dp"
         android:textSize="18dp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="-3dp" />
 

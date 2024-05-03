@@ -2,8 +2,11 @@ package com.example.opsc_part2
 
 
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
+import android.widget.TimePicker
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,24 +32,44 @@ class Timesheet : AppCompatActivity() {
             insets
         }
 
-        var btnadd : Button = findViewById(R.id.btnAddTimesheet)
+        val display = findViewById<TextView>(R.id.txtDisplay)
+        val tp = findViewById<TimePicker>(R.id.timePicker)
+        tp.setOnTimeChangedListener { _, hour, minute ->
+            var hour = hour
+            var am_pm = ""
+            // AM_PM decider logic
+            when {
+                hour == 0 -> {
+                    hour += 12
+                    am_pm = "AM" }
+
+                hour == 12 -> am_pm = "PM"
+                hour > 12 -> {
+                    hour -= 12
+                    am_pm = "PM" }
+
+                else -> am_pm = "AM"
+            }
+            if (display != null)
+            {
+                val hour = if (hour < 10) "0" + hour else hour
+                val min = if (minute < 10) "0"  + minute else minute
+                // display format of time
+                val msg = "Time is: $hour : $min $am_pm"
+                display.text = msg
+                display.visibility = ViewGroup.VISIBLE
+            }
+        }
+
+            var btnadd : Button = findViewById(R.id.btnAddTimesheet)
 
         var tdate : EditText = findViewById(R.id.txtDate)
-        var tstart : EditText = findViewById(R.id.txtStartTime)
-        var tend : EditText = findViewById(R.id.txtEndTime)
         var desc : EditText = findViewById(R.id.txtDescription)
 
         btnadd.setOnClickListener()
         {
 
-            if((tdate.text.toString().isEmpty()) || (tstart.text.toString().isEmpty()) || (tend.text.toString().isEmpty()) || (desc.text.toString().isEmpty()))
-            {
-                Toast.makeText(this, "Please enter all fields!", Toast.LENGTH_SHORT).show()
-            }
-            else
-            {
-                
-            }
+
 
         }
     }
