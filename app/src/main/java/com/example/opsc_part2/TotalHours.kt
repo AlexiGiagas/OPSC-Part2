@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.sql.Time
+import java.text.SimpleDateFormat
 
 class TotalHours : AppCompatActivity()
 {
@@ -30,15 +31,6 @@ class TotalHours : AppCompatActivity()
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
-        val arrTSdata = ArrayList<String>()
 
-        for (arg in Timesheet.arrTimesheet)
-        {
-            arrTSdata.add("Date: " + arg.Date + ", Start Time: " + arg.StartTime + ", End Time: " + arg.EndTime + ", Desc: " + arg.Description)
-        }
-
-        val listbox : ListView = findViewById(R.id.lstTotalHours)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arrTSdata)
-        listbox.adapter = adapter
     }
 }

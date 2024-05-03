@@ -21,6 +21,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Date
+import java.util.regex.Pattern
 
 class Timesheet : AppCompatActivity()
 {
@@ -118,13 +119,21 @@ class Timesheet : AppCompatActivity()
                 val dateString: EditText = findViewById(R.id.txtDate)
                 val desc: EditText = findViewById(R.id.txtDescription)
 
+                val pattern = Pattern.compile("\\d{2}-\\d{2}-\\d{4}")
+                val matcher = pattern.matcher(dateString.text.toString())
+
                 if ((startdisplay.text.toString().isEmpty()) || (enddisplay.text.toString()
                         .isEmpty()) || (desc.text.toString().isEmpty()) || (dateString.text.toString().isEmpty())
                 ) {
                     Toast.makeText(this, "Enter all fields!", Toast.LENGTH_SHORT).show()
-                } else {
+                }
+                else if (!matcher.matches()) {
+                    dateString.error = "Please make sure the date is in the format: dd-mm-yyyy"
+                }
+                else {
                     val formatter = SimpleDateFormat("dd-MM-yyyy")
                     val date = formatter.parse(dateString.text.toString())
+                    val formateddate = formatter.format(date)
                     arrTimesheet.add(TimesheetData(date, startdisplay.text.toString(), enddisplay.text.toString(), desc.text.toString()))
                     Toast.makeText(this, "Successfully added timesheet", Toast.LENGTH_SHORT).show()
                 }
