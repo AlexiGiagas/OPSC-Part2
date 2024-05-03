@@ -3,6 +3,7 @@ package com.example.opsc_part2
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -41,7 +42,8 @@ class MinMaxHours : AppCompatActivity()
             {
                 arrMinMax.add(min.text.toString())
                 arrMinMax.add(max.text.toString())
-                println(arrMinMax.isEmpty())
+
+                Toast.makeText(this, "Successfully added Min and Max hours", Toast.LENGTH_SHORT).show()
             }
         }
     }
