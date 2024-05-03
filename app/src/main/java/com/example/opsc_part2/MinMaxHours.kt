@@ -12,7 +12,7 @@ class MinMaxHours : AppCompatActivity()
 {
     companion object
     {
-        var arrMinMax : Array<Int>()
+        var arrMinMax : ArrayList<String> = ArrayList()
     }
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -34,12 +34,13 @@ class MinMaxHours : AppCompatActivity()
         {
             if((min.text.toString().isEmpty()) || (max.text.toString().isEmpty()))
             {
-                min.setError("Please enter minimum daily hours")
-                max.setError("Please enter maximum daily hours")
+                min.setError("Please enter valid minimum hours")
+                max.setError("Please enter valid maximum hours")
             }
             else
             {
-
+                arrMinMax.add(min.text.toString())
+                arrMinMax.add(max.text.toString())
             }
         }
     }
