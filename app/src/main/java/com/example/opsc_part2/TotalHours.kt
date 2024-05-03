@@ -2,12 +2,9 @@ package com.example.opsc_part2
 
 import android.content.Intent
 import android.os.Bundle
-<<<<<<< Updated upstream
 import android.widget.Button
-=======
 import android.widget.ArrayAdapter
 import android.widget.ListView
->>>>>>> Stashed changes
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,14 +24,12 @@ class TotalHours : AppCompatActivity()
             insets
         }
 
-<<<<<<< Updated upstream
         var back : Button = findViewById(R.id.btnBack)
 
         back.setOnClickListener() {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
-=======
         val arrTSdata = ArrayList<String>()
 
         for (arg in Timesheet.arrTimesheet)
@@ -45,6 +40,5 @@ class TotalHours : AppCompatActivity()
         val listbox : ListView = findViewById(R.id.lstTotalHours)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arrTSdata)
 
->>>>>>> Stashed changes
     }
 }

@@ -29,13 +29,7 @@ class Timesheet : AppCompatActivity()
         var arrTimesheet = ArrayList<TimesheetData>()
     }
 
-<<<<<<< Updated upstream
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
-=======
     override fun onCreate(savedInstanceState: Bundle?) {
->>>>>>> Stashed changes
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_timesheet)
@@ -54,10 +48,7 @@ class Timesheet : AppCompatActivity()
         val tp = findViewById<TimePicker>(R.id.tpStart)
         //region StartTime
         tp.setOnTimeChangedListener { _, hour, minute ->
-<<<<<<< Updated upstream
             val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
-=======
->>>>>>> Stashed changes
             val tpstart = findViewById<TimePicker>(R.id.tpStart)
             tpstart.setOnTimeChangedListener { _, hour, minute ->
 
@@ -90,10 +81,7 @@ class Timesheet : AppCompatActivity()
             //endregion
 
             //region EndTime
-<<<<<<< Updated upstream
             val enddisplay = findViewById<TextView>(R.id.txtEndDisp)
-=======
->>>>>>> Stashed changes
             val tpend = findViewById<TimePicker>(R.id.tpEnd)
             tpend.setOnTimeChangedListener { _, hour, minute ->
                 var hour = hour
@@ -125,7 +113,7 @@ class Timesheet : AppCompatActivity()
 
             //endregion
 
-<<<<<<< Updated upstream
+
             var formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy")
             var date: EditText = findViewById(R.id.txtDate)
             var desc: EditText = findViewById(R.id.txtDescription)
@@ -147,51 +135,12 @@ class Timesheet : AppCompatActivity()
 
             }
         }
+
         var back : Button = findViewById(R.id.btnBack)
 
         back.setOnClickListener() {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
-=======
-            val formatter = SimpleDateFormat("dd-mm-yyyy")
-            val dateString: EditText = findViewById(R.id.txtDate)
-            val date = formatter.parse(dateString.text.toString())
-            val desc: EditText = findViewById(R.id.txtDescription)
-
-
-            var btnadd: Button = findViewById(R.id.btnAddTimesheet)
-            btnadd.setOnClickListener()
-            {
-
-
-                if ((startdisplay.text.toString().isEmpty()) || (enddisplay.text.toString()
-                        .isEmpty()) || (desc.text.toString().isEmpty())
-                ) {
-                    Toast.makeText(this, "Enter all fields!", Toast.LENGTH_SHORT).show()
-                } else {
-                    arrTimesheet.add(
-                        TimesheetData(
-                            date,
-                            startdisplay.text.toString(),
-                            enddisplay.text.toString(),
-                            desc.text.toString()
-                        )
-                    )
-                    Toast.makeText(this, "Successfully added timesheet", Toast.LENGTH_SHORT).show()
-                }
-
-            }
-
-
-            var btnBack: Button = findViewById(R.id.btnBack)
-            btnBack.setOnClickListener()
-            {
-                val intent = Intent(this, Home::class.java)
-                startActivity(intent)
-            }
-
-
->>>>>>> Stashed changes
         }
     }
 }
