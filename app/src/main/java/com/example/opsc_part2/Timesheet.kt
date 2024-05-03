@@ -38,9 +38,11 @@ class Timesheet : AppCompatActivity() {
             insets
         }
 
-        //region StartTime
-        val display = findViewById<TextView>(R.id.txtEndDisp)
+
+
+        val startdisplay = findViewById<TextView>(R.id.txtEndDisp)
         val tp = findViewById<TimePicker>(R.id.tpStart)
+        //region StartTime
         tp.setOnTimeChangedListener { _, hour, minute ->
         val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
         val tpstart = findViewById<TimePicker>(R.id.tpStart)
