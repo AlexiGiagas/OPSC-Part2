@@ -33,7 +33,7 @@ class Timesheet : AppCompatActivity() {
         }
 
         val display = findViewById<TextView>(R.id.txtDisplay)
-        val tp = findViewById<TimePicker>(R.id.timePicker)
+        val tp = findViewById<TimePicker>(R.id.tpStart)
         tp.setOnTimeChangedListener { _, hour, minute ->
             var hour = hour
             var am_pm = ""
