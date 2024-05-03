@@ -13,10 +13,8 @@ import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.regex.Pattern
 
-class ListOfEntries : AppCompatActivity()
-{
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+class ListOfEntries : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_list_of_entries)
@@ -26,21 +24,18 @@ class ListOfEntries : AppCompatActivity()
             insets
         }
 
-<<<<<<< Updated upstream
-        var btnSearch : Button = findViewById(R.id.btnSearchEntries)
+        var btnSearch: Button = findViewById(R.id.btnSearchEntries)
         btnSearch.setOnClickListener() {
-            val startdate : TextView = findViewById(R.id.txtStartDate)
-            val enddate : TextView = findViewById(R.id.txtEndDate)
+            val startdate: TextView = findViewById(R.id.txtStartDate)
+            val enddate: TextView = findViewById(R.id.txtEndDate)
 
             val pattern = Pattern.compile("\\d{2}-\\d{2}-\\d{4}")
             val matcher1 = pattern.matcher(startdate.text.toString())
             val matcher2 = pattern.matcher(enddate.text.toString())
 
-            if ((matcher1.matches()) && (matcher2.matches()))
-            {
+            if ((matcher1.matches()) && (matcher2.matches())) {
                 val formatter = SimpleDateFormat("dd-MM-yyyy")
-                for (arg in Timesheet.arrTimesheet)
-                {
+                for (arg in Timesheet.arrTimesheet) {
                     val date = formatter.format(arg.Date)
 
                     val temp1 = formatter.parse(startdate.text.toString())
@@ -48,8 +43,7 @@ class ListOfEntries : AppCompatActivity()
                     val temp2 = formatter.parse(enddate.text.toString())
                     val edate = formatter.format(temp2)
 
-                    if ((date >= sdate) && (date <= edate))
-                    {
+                    if ((date >= sdate) && (date <= edate)) {
                         Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -57,47 +51,43 @@ class ListOfEntries : AppCompatActivity()
         }
 
 
-        var back : Button = findViewById(R.id.btnBack)
+        var back: Button = findViewById(R.id.btnBack)
         back.setOnClickListener() {
-=======
-        //Declaring bac button variable
-        var back : Button = findViewById(R.id.btnBack)
 
-        //Setting an on click event to go to the home page
-        back.setOnClickListener()
-        {
->>>>>>> Stashed changes
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-        }
+            //Declaring bac button variable
+            var back: Button = findViewById(R.id.btnBack)
 
-<<<<<<< Updated upstream
-
-=======
-        //Declaring variables
-        val startdate : TextView = findViewById(R.id.txtStartDate)
-        val enddate : TextView = findViewById(R.id.txtEndDate)
-        val pattern = Pattern.compile("\\d{2}-\\d{2}-\\d{4}")
-        val matcher1 = pattern.matcher(startdate.text.toString())
-        val matcher2 = pattern.matcher(enddate.text.toString())
-
-        if ((matcher1.matches()) && (matcher2.matches()))
-        {
-            val formatter = SimpleDateFormat("dd-MM-yyyy")
-            for (arg in Timesheet.arrTimesheet)
+            //Setting an on click event to go to the home page
+            back.setOnClickListener()
             {
-                val date = formatter.format(arg.Date)
-                val temp1 = formatter.parse(startdate.text.toString())
-                val sdate = formatter.format(temp1)
-                val temp2 = formatter.parse(enddate.text.toString())
-                val edate = formatter.format(temp2)
 
-                if ((date >= sdate) && (date <= edate))
-                {
-                    Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, Home::class.java)
+                startActivity(intent)
+            }
+
+
+            //Declaring variables
+            val startdate: TextView = findViewById(R.id.txtStartDate)
+            val enddate: TextView = findViewById(R.id.txtEndDate)
+            val pattern = Pattern.compile("\\d{2}-\\d{2}-\\d{4}")
+            val matcher1 = pattern.matcher(startdate.text.toString())
+            val matcher2 = pattern.matcher(enddate.text.toString())
+
+            if ((matcher1.matches()) && (matcher2.matches())) {
+                val formatter = SimpleDateFormat("dd-MM-yyyy")
+                for (arg in Timesheet.arrTimesheet) {
+                    val date = formatter.format(arg.Date)
+                    val temp1 = formatter.parse(startdate.text.toString())
+                    val sdate = formatter.format(temp1)
+                    val temp2 = formatter.parse(enddate.text.toString())
+                    val edate = formatter.format(temp2)
+
+                    if ((date >= sdate) && (date <= edate)) {
+                        Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
+
         }
->>>>>>> Stashed changes
     }
 }
