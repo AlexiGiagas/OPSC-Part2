@@ -28,8 +28,8 @@ class Home : AppCompatActivity() {
         var minmax : Button = findViewById(R.id.btnMinMax)
         var minval : TextView = findViewById(R.id.txtMaxValue)
         var maxval : TextView = findViewById(R.id.txtMaxValue)
-        minval.setText(MinMaxHours.arrMinMax[0].toString())
-        maxval.setText(MinMaxHours.arrMinMax[1].toString())
+        /*minval.setText(MinMaxHours.arrMinMax[0].toString())
+        maxval.setText(MinMaxHours.arrMinMax[1].toString())*/
 
 
             timesheet.setOnClickListener()
