@@ -41,8 +41,10 @@ class MinMaxHours : AppCompatActivity()
             }
             else
             {
+                println(arrMinMax.isEmpty())
                 arrMinMax.add(min.text.toString())
                 arrMinMax.add(max.text.toString())
+                println(arrMinMax.isEmpty())
 
                 Toast.makeText(this, "Successfully added Min and Max hours", Toast.LENGTH_SHORT).show()
             }

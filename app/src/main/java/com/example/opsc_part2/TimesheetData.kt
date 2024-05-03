@@ -7,5 +7,5 @@ data class TimesheetData (
     val Date : Date,
     val StartTime : String,
     val EndTime : String,
-    val Description : String,
+    val Description : String
 )
