@@ -1,5 +1,6 @@
 package com.example.opsc_part2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -43,6 +44,13 @@ class MinMaxHours : AppCompatActivity()
                 arrMinMax.add(max.text.toString())
                 println(arrMinMax.isEmpty())
             }
+        }
+
+        var back : Button = findViewById(R.id.btnBack)
+
+        back.setOnClickListener() {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
         }
     }
 }
