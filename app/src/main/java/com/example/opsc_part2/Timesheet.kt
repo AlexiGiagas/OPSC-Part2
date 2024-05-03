@@ -119,13 +119,14 @@ class Timesheet : AppCompatActivity()
                 val dateString: EditText = findViewById(R.id.txtDate)
                 val desc: EditText = findViewById(R.id.txtDescription)
                 val category : EditText = findViewById(R.id.txtCat)
-                val found : Boolean = false
+                var found : Boolean = false
 
                 for (arg in Categories.arrCategories)
                 {
                     if (arg.equals(category.text.toString()))
                     {
-                        found == true
+                        found = true
+                        break
                     }
                 }
 
