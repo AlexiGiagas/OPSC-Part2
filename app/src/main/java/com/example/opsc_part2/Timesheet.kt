@@ -1,6 +1,7 @@
 package com.example.opsc_part2
 
 
+import android.os.Build
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Button
@@ -9,11 +10,13 @@ import android.widget.TextView
 import android.widget.TimePicker
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.text.SimpleDateFormat
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Date
 
@@ -24,6 +27,7 @@ class Timesheet : AppCompatActivity() {
         var arrTimesheet = ArrayList<TimesheetData>()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,12 +38,10 @@ class Timesheet : AppCompatActivity() {
             insets
         }
 
-
+        //region StartTime
         val display = findViewById<TextView>(R.id.txtEndDisp)
         val tp = findViewById<TimePicker>(R.id.tpStart)
         tp.setOnTimeChangedListener { _, hour, minute ->
-
-        //region StartTime
         val startdisplay = findViewById<TextView>(R.id.txtStartDisp)
         val tpstart = findViewById<TimePicker>(R.id.tpStart)
         tpstart.setOnTimeChangedListener { _, hour, minute ->
@@ -102,14 +104,17 @@ class Timesheet : AppCompatActivity() {
             }
             //endregion
 
-
+        var formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy")
         var date : EditText = findViewById(R.id.txtDate)
         var desc : EditText = findViewById(R.id.txtDescription)
-        
+
+
+
 
         var btnadd : Button = findViewById(R.id.btnAddTimesheet)
         btnadd.setOnClickListener()
         {
+
 
             if((startdisplay.text.toString().isEmpty()) || (enddisplay.text.toString().isEmpty()) || (desc.text.toString().isEmpty()))
             {
