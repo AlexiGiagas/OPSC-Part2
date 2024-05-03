@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Categories : AppCompatActivity()
 {
-    var arrCategories = ArrayList<CategoriesData>()
+    var arrCategories = ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -43,7 +43,7 @@ class Categories : AppCompatActivity()
             }
             else
             {
-                arrCategories.add(CategoriesData(categ.text.toString()))
+                arrCategories.add(categ.text.toString())
                 Toast.makeText(this, "Successfully added Category.", Toast.LENGTH_SHORT).show()
                 adapter.notifyDataSetChanged()
             }
