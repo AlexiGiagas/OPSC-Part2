@@ -165,9 +165,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="278dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="429dp"
         android:text="Start Time"
         android:textColor="@color/black"
         android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -177,9 +181,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="463dp"
+        android:layout_marginEnd="320dp"
+        android:layout_marginBottom="244dp"
         android:text="End Time"
         android:textColor="@color/black"
         android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

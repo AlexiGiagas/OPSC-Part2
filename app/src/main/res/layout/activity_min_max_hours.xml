@@ -102,9 +102,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="93dp"
         android:layout_marginTop="354dp"
+        android:layout_marginEnd="227dp"
+        android:layout_marginBottom="354dp"
         android:text="Max Hours: "
         android:textColor="@color/black"
         android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,9 +118,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="93dp"
         android:layout_marginTop="390dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginBottom="318dp"
         android:text="Min Hours: "
         android:textColor="@color/black"
         android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -126,9 +134,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="195dp"
         android:layout_marginTop="390dp"
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="318dp"
         android:text=""
         android:textColor="@color/black"
         android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -138,9 +150,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="195dp"
         android:layout_marginTop="354dp"
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="354dp"
         android:text=""
         android:textColor="@color/black"
         android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

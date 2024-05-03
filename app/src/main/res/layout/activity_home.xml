@@ -47,10 +47,14 @@
         android:layout_height="52dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="499dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="180dp"
         android:backgroundTint="#CACCCA"
         android:text="Total Hours"
         android:textColor="@color/black"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,10 +64,14 @@
         android:layout_height="52dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="378dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="301dp"
         android:backgroundTint="#CACCCA"
         android:text="Categories"
         android:textColor="@color/black"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,10 +81,14 @@
         android:layout_height="52dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="562dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="117dp"
         android:backgroundTint="#CACCCA"
         android:text="Min and Max Hours"
         android:textColor="@color/black"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,10 +98,14 @@
         android:layout_height="52dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="438dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="241dp"
         android:backgroundTint="#CACCCA"
         android:text="List of Entries"
         android:textColor="@color/black"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,10 +115,14 @@
         android:layout_height="52dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="318dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="361dp"
         android:backgroundTint="#CACCCA"
         android:text="Timesheet"
         android:textColor="@color/black"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
