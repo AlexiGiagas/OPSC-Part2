@@ -1,5 +1,6 @@
 package com.example.opsc_part2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -29,6 +30,7 @@ class Categories : AppCompatActivity()
 
         var btnaddcategory : Button = findViewById(R.id.btnAddCategory)
         var listbox : ListView = findViewById(R.id.listBox)
+        var back : Button = findViewById(R.id.btnBack)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arrCategories)
 
         listbox.adapter = adapter
@@ -47,6 +49,11 @@ class Categories : AppCompatActivity()
                 Toast.makeText(this, "Successfully added Category.", Toast.LENGTH_SHORT).show()
                 adapter.notifyDataSetChanged()
             }
+        }
+
+        back.setOnClickListener() {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
         }
 
     }
