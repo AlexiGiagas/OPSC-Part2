@@ -4,10 +4,10 @@ import java.sql.Time
 import java.util.Date
 
 data class TimesheetData (
-    val date : Date,
+    val Date : Date,
     val StartTime : Time,
     val EndTime : Time,
     val Description : String,
-    val imageURL : String
+    //val imageURL : String
 )
 //Double check if this is fine!!
